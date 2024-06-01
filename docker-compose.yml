@@ -1,0 +1,13 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:latest
+    container_name: sql_cookbook
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: cookbook
+    volumes:
+      - ./postgres/init:/docker-entrypoint-initdb.d
